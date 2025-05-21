@@ -21,16 +21,9 @@ public class ReportingServiceImpl implements ReportingService {
     @Value("${bank.url}")
     private String bankUrl;
 
-    @SuppressWarnings("unused")
-    private String callStudentServiceAndGetData_Fallback() {
+   
 
-        System.out.println("Student Service is down!!! fallback route enabled...");
-
-        return "CIRCUIT BREAKER ENABLED!!! No Response From Student Service at this moment. " +
-                " Service will be back shortly - " + new Date();
-    }
-
-    @HystrixCommand(fallbackMethod = "callStudentServiceAndGetData_Fallback")
+   
     public List<BankTO> getAllBanks() throws BankDetailsNotFound {
         log.info("Inside the ReportingServiceImpl.getAllBanks, url:{}", bankUrl);
         WebClient webClient = WebClient.create(bankUrl);
