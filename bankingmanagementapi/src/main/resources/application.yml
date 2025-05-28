@@ -1,0 +1,25 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://regussm:pA3a0RCt2RI5cewM@emexo.en2dxtv.mongodb.net
+      database: bankingmanagement
+
+# To set logs level as per your need.
+logging:
+  level:
+    com:
+      bankingmanagement: debug
+  file:
+    name: bankingmanagement.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,metrics,loggers,beans,mappings,threaddump,env,caches,prometheus
+  endpoint:
+    health:
+      show-details: always
+

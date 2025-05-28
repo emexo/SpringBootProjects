@@ -1,0 +1,10 @@
+{
+  "_id": {
+    "$oid": "66df9991fad92f27b54d559a"
+  },
+  "bankCode":  "23",
+
+  "bankName": "SBI",
+  "bankAddress": "Bangalore",
+  "_class": "com.bankingmanagement.entity.Bank"
+}
